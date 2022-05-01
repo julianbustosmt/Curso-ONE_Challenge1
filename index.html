@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <title>Encriptador</title>
 </head>
+
 <body>
     <header>
         <img src="./img/Logo-vector.svg" alt="Logo-Alura" class="logo">
@@ -15,28 +18,33 @@
     <main>
         <section class="input">
 
-            <textarea name="text" id="text" cols="30" rows="10" placeholder="Ingrese el texto aqui" class="input-text"></textarea>
-            <p class ="info"><img src="./img/Info.svg" alt="info"> Solo letras minúsculas y sin acentos</p>
+            <textarea name="text" id="input-text" cols="30" rows="10" placeholder="Ingrese el texto aqui"
+                class="input-text"></textarea>
+            <p class="info animate__animated"><img class="info" src="./img/Info.svg" style alt="info"> Solo letras minúsculas y sin acentos</p>
 
             <div class="input-buttons">
-            <button class="encrypt button">Encriptar</button>
-            <button class="decrypt button">Desencriptar</button>
+                <button class="encrypt button" id="btn-encrypt">Encriptar</button>
+                <button class="decrypt button" id="btn-decrypt">Desencriptar</button>
             </div>
 
         </section>
 
         <section class="output">
 
-            <textarea name="" id="" cols="30" rows="3" placeholder="Ningún mensaje fue encontrado" disabled="true" class="output-text"></textarea>
-            <p>Ingresa el texto que desees encriptar o desencriptar.</p>
-            <button class="copy button">Copiar</button>
+            <textarea name="output-text" id="output-text" cols="30" rows="3" placeholder="Ningún mensaje fue encontrado"
+                disabled="true" class="output-text"></textarea>
+            <p id="output-p">Ingresa el texto que desees encriptar o desencriptar.</p>
+            <button class="copy button hidden" id="btn-copy">Copiar</button>
 
         </section>
     </main>
     <footer>
 
     </footer>
-    
+
 </body>
 <script src="./js/index.js"></script>
+<script src="./js/eventListener.js"></script>
+<script src="./js/funtions.js"></script>
+
 </html>

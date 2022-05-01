@@ -8,6 +8,7 @@
     --primary: #0A3871;
     --secundary: #FFFFFF;
     --text-secundary: #343A40;
+    --text-warning: #d62828;
 
 }
 
@@ -44,6 +45,7 @@ main{
     color: var(--primary);
     background-color: var(--bg-primary);
     border: none;
+    resize: none;
 }
 
 .input-text::placeholder{
@@ -61,6 +63,7 @@ main{
 .info {
     color: var(--text-secundary);
     font-size: 0.8rem;
+    text-align: center;
 }
 
 .input-buttons{
@@ -109,6 +112,8 @@ main{
     border: none;
     border-radius: 2rem;
     margin: 2rem 0 0;
+    padding: 0.5rem;
+    resize: none;
 }
 
 .output-text::placeholder{
@@ -122,6 +127,7 @@ main{
     font-size: 1rem;
     font-weight: 400;
     text-align: center;
+    vertical-align: baseline;
     width: 90%;
     margin: 0 0 1rem;
 }
@@ -132,4 +138,14 @@ main{
     width: 85%;
     margin: 0 0 2rem;
 }
+
+.hidden{
+    display: none;
+}
+
+.warning{
+    color: var(--text-warning);
+}
+
+
 

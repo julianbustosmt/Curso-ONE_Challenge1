@@ -18,7 +18,7 @@ const encrypt = (letter) => {
     return (letter)
 }
 
-const encrypttext = (text) => {
+const encryptText = (text) => {
     let encryptedText = ""
     for (let i = 0; i < text.length; i++) {
         encryptedText += encrypt(text[i]);
