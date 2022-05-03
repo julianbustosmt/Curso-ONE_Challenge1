@@ -13,14 +13,18 @@
 
 <body>
     <header>
-        <img src="./img/Logo-vector.svg" alt="Logo-Alura" class="logo">
+        <img src="./img/Logo.svg" alt="Logo-Alura" class="logo">
     </header>
     <main>
         <section class="input">
 
             <textarea name="text" id="input-text" cols="30" rows="10" placeholder="Ingrese el texto aqui"
                 class="input-text"></textarea>
-            <p class="info animate__animated"><img class="info" src="./img/Info.svg" style alt="info"> Solo letras minúsculas y sin acentos</p>
+            <p class="info animate__animated">
+                    <object data="./img/Info.svg" id="info-svg"class=""></object>
+                    <object data="./img/Info-warning.svg" id="info-svg-warnin" class="hidden"></object>
+                    Solo letras minúsculas y sin acentos
+            </p>
 
             <div class="input-buttons">
                 <button class="encrypt button" id="btn-encrypt">Encriptar</button>

@@ -1,9 +1,10 @@
 
 const inputText = document.getElementById("input-text")
+const info = document.querySelector(".info")
+const infoSvg = document.getElementById("info-svg")
+const infoSvgWarning = document.getElementById("info-svg-warnin")
 const btnEncrypt = document.getElementById("btn-encrypt")
 const btnDecrypt = document.getElementById("btn-decrypt")
-const info = document.querySelector(".info")
-console.log(info)
 
 const outputText = document.getElementById("output-text")
 const outputP = document.getElementById("output-p")
@@ -25,11 +26,16 @@ inputText.addEventListener("keydown", (event)=>{
     let expresion = /[a-z]/
     let key = event.key;
 
-    if(!expresion.test(key)){
-        addWarnign(info)
-    }else{
+    if(expresion.test(key) || key == " " ){
         removeWarnign(info)
-        inputText.disabled = false
+        infoSvgWarning.classList.add("hidden")
+        infoSvg.classList.remove("hidden")
+        
+    }else{
+        addWarnign(info)
+        event.preventDefault()
+        infoSvg.classList.add("hidden")
+        infoSvgWarning.classList.remove("hidden")
     }
 })
 
