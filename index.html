@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="esp">
 
 <head>
     <meta charset="UTF-8">
@@ -21,9 +21,9 @@
             <textarea name="text" id="input-text" cols="30" rows="10" placeholder="Ingrese el texto aqui"
                 class="input-text"></textarea>
             <p class="info animate__animated">
-                    <object data="./img/Info.svg" id="info-svg"class=""></object>
-                    <object data="./img/Info-warning.svg" id="info-svg-warnin" class="hidden"></object>
-                    Solo letras minúsculas y sin acentos
+                <object data="./img/Info.svg" id="info-svg" class=""></object>
+                <object data="./img/Info-warning.svg" id="info-svg-warning" class="hidden"></object>
+                Solo letras minúsculas y sin acentos
             </p>
 
             <div class="input-buttons">
@@ -41,6 +41,18 @@
             <button class="copy button hidden" id="btn-copy">Copiar</button>
 
         </section>
+
+        <section id="modal" class="modal">
+
+            <div class="modal-container">
+                <a class="modal-close"href="#"><img src="./img/Modal-close.svg" alt="Cerrar modal"></a>
+                <img src="./img/Modal-warning.svg" alt="Alerta">
+                <h2 class="modal-title"></h2>
+                <p class="modal-paragraph"></p>
+            </div>
+
+        </section>
+
     </main>
     <footer>
 
@@ -49,6 +61,6 @@
 </body>
 <script src="./js/index.js"></script>
 <script src="./js/eventListener.js"></script>
-<script src="./js/funtions.js"></script>
+<script src="./js/functions.js"></script>
 
 </html>

@@ -2,7 +2,7 @@
 const inputText = document.getElementById("input-text")
 const info = document.querySelector(".info")
 const infoSvg = document.getElementById("info-svg")
-const infoSvgWarning = document.getElementById("info-svg-warnin")
+const infoSvgWarning = document.getElementById("info-svg-warning")
 const btnEncrypt = document.getElementById("btn-encrypt")
 const btnDecrypt = document.getElementById("btn-decrypt")
 
@@ -11,14 +11,26 @@ const outputP = document.getElementById("output-p")
 const btnCopy = document.getElementById("btn-copy")
 
 
-btnEncrypt.addEventListener("click", ()=> { 
+btnEncrypt.addEventListener("click", (event)=> { 
     const text = encryptText(inputText.value)
-    output(text)
+    if(text.length > 0){
+        output(text)
+    }else{
+        const title = "Ningún mensaje fue encontrado"
+        const paragraph = "Ingrese el texto que desea encriptar"
+        modalContent(title,paragraph)
+    }
 })  
 
-btnDecrypt.addEventListener("click", ()=> { 
+btnDecrypt.addEventListener("click", (event)=> { 
     const text = decryptText(inputText.value)
-    output(text)
+    if(text.length > 0){
+        output(text)
+    }else{
+        const title = "Ningún mensaje fue encontrado"
+        const paragraph = "Ingrese el texto que desea desencriptar"
+        modalContent(title,paragraph)
+    }
 })  
 
 inputText.addEventListener("keydown", (event)=>{
