@@ -11,39 +11,49 @@ const outputP = document.getElementById("output-p")
 const btnCopy = document.getElementById("btn-copy")
 
 
-btnEncrypt.addEventListener("click", (event)=> { 
+btnEncrypt.addEventListener("click", () => {
     const text = encryptText(inputText.value)
-    if(text.length > 0){
+    if (text.length > 0) {
         output(text)
-    }else{
+        autoSize(outputText)
+    } else {
         const title = "Ningún mensaje fue encontrado"
         const paragraph = "Ingrese el texto que desea encriptar"
-        modalContent(title,paragraph)
+        modalContent(title, paragraph)
     }
-})  
+})
 
-btnDecrypt.addEventListener("click", (event)=> { 
-    const text = decryptText(inputText.value)
-    if(text.length > 0){
-        output(text)
-    }else{
+btnDecrypt.addEventListener("click", () => {
+    const text = inputText.value
+
+    if (text.length === 0) {
         const title = "Ningún mensaje fue encontrado"
         const paragraph = "Ingrese el texto que desea desencriptar"
-        modalContent(title,paragraph)
+        modalContent(title, paragraph)
+    } else {
+        try {
+            output(decryptText(text))
+            autoSize(outputText)
+        } catch (error) {
+            const title = "Error"
+            const paragraph = "Cadena inválida"
+            modalContent(title, paragraph)
+        }
     }
-})  
+})
 
-inputText.addEventListener("keydown", (event)=>{
+inputText.addEventListener("keydown", (event) => {
 
     let expresion = /[a-z]/
     let key = event.key;
+    clear();
 
-    if(expresion.test(key) || key == " " ){
+    if (expresion.test(key) || key == " ") {
         removeWarnign(info)
         infoSvgWarning.classList.add("hidden")
         infoSvg.classList.remove("hidden")
-        
-    }else{
+
+    } else {
         addWarnign(info)
         event.preventDefault()
         infoSvg.classList.add("hidden")
@@ -51,3 +61,20 @@ inputText.addEventListener("keydown", (event)=>{
     }
 })
 
+inputText.addEventListener("input", ()=>{
+    autoSize(inputText)
+})
+
+const copyCheck = document.querySelector(".copy-check")
+btnCopy.addEventListener("click", () => {
+    const textToCopy = outputText.value
+    navigator.clipboard.writeText(textToCopy)
+        .then(() => {
+            /**Agregar letreto de copiado */            copyCheck.classList.add("copy-check--show")
+            copyCheck.classList.add("animate__tada")
+            window.setTimeout(copyClear,3000) 
+        })
+        .catch(err => {
+            console.log('Something went wrong', err);
+        })
+})

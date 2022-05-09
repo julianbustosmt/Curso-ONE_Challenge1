@@ -4,6 +4,18 @@ function output(text) {
     outputP.classList.add("hidden")
 }
 
+const copyClear = () =>{
+    inputText.value = ""
+    copyCheck.classList.remove("copy-check--show")
+    copyCheck.classList.remove("animate__tada")
+}
+
+const clear = () =>{
+    outputText.value = ""
+    outputP.classList.remove("hidden")
+    btnCopy.classList.add("hidden")
+}
+
 const addWarnign = (element) => {
     element.classList.add("animate__shakeX")
     element.classList.add("warning")
@@ -32,4 +44,10 @@ const modalContent = (title, paragraph) => {
     })
 
 }
+
+const autoSize = (element) =>{
+    element.style.height = "auto"
+    element.style.height = `${element.scrollHeight}px`
+}
+
 

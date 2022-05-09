@@ -7,7 +7,8 @@
     --bg-secundary: #072B61;
     --primary: #0A3871;
     --secundary: #FFFFFF;
-    --text-secundary: #343A40;
+    --text-primary: #343A40;
+    --text-secundary: #495057;
     --text-warning: #d62828;
     --bg-modal: #343A40bd;
 
@@ -54,7 +55,9 @@ main{
     background-color: var(--bg-primary);
     border: none;
     resize: none;
-    line-height: 2.5rem;   
+    line-height: 2.5rem;
+    min-height: 200px;
+    padding: 0;
 }
 
 .input-text::placeholder{
@@ -71,8 +74,9 @@ main{
 
 .info {
     color: var(--text-secundary);
-    font-size: 0.8rem;
+    font-size: 1rem;
     text-align: center;
+    color: text;
 }
 
 .warning{
@@ -118,25 +122,39 @@ main{
     align-items: center;
     min-height: 11.6rem;
     margin-bottom: 2rem;
+    position: relative;
 }
 
 .output-text{
     width: 85%;
     background-color: var(--secundary);
     border: none;
-    border-radius: 2rem;
     margin: 2rem 0 0;
-    padding: 0.5rem;
+    padding: 0;
     resize: none;
     font-size: 1.5rem;
     line-height: 2.25rem;
+    transition: hidden 0.2s;
 }
 
 .output-text::placeholder{
     font-weight: 700;
-    color: var(--text-secundary);
+    color: var(--text-primary);
     font-size: 1.5rem;
     text-align: center;
+}
+
+.copy-check{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0.8rem 1rem 0 0;
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+.copy-check--show{
+    opacity: 1;
 }
 
 .output p{
@@ -145,14 +163,15 @@ main{
     text-align: center;
     vertical-align: baseline;
     width: 90%;
-    margin: -2.25rem 0 1rem;
+    margin: 0.5rem 0 1rem;
+    color: var(--text-secundary);
 }
 
 .copy{
     background-color: var(--secundary);
     color: var(--primary);
     width: 85%;
-    margin: 0 0 2rem;
+    margin: 2rem 0;
 }
 
 /*<-------------------------------------->*/
@@ -170,7 +189,7 @@ main{
     pointer-events: none;
     transition: opacity .3s .2s;
     --transform: translateY(-100vh) ;
-    --transition: transform .5s
+    --transition: transform .4s
 }
 
 .modal--show{
@@ -178,7 +197,7 @@ main{
     pointer-events: unset;
     transition: opacity .3s;
     --transform: translateY(0) ;
-    --transition: transform .5s .2s
+    --transition: transform .2s .2s
 }
 
 .modal-container{
@@ -187,7 +206,7 @@ main{
     margin: auto;
     max-width: 200px;
     max-height: 90%;
-    border-radius: 6px;
+    border-radius: 1.5rem;
     padding: 1.5rem 1rem;
     display: grid;
     place-items: center;
@@ -211,7 +230,6 @@ main{
 }
 
 .modal-close:hover{
-    color: var(--text-warning);
     transform: scale(1.2);
 }
 
@@ -230,4 +248,6 @@ main{
 
 /*<-------------------------------------->*/
 
-
+textarea::-webkit-scrollbar{
+    width: 0;
+}

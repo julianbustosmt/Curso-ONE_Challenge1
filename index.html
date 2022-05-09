@@ -18,7 +18,7 @@
     <main>
         <section class="input">
 
-            <textarea name="text" id="input-text" cols="30" rows="10" placeholder="Ingrese el texto aqui"
+            <textarea name="input-text" id="input-text" placeholder="Ingrese el texto aqui"
                 class="input-text"></textarea>
             <p class="info animate__animated">
                 <object data="./img/Info.svg" id="info-svg" class=""></object>
@@ -34,18 +34,17 @@
         </section>
 
         <section class="output">
-
-            <textarea name="output-text" id="output-text" cols="30" rows="3" placeholder="Ningún mensaje fue encontrado"
+            <textarea name="output-text" id="output-text" placeholder="Ningún mensaje fue encontrado"
                 disabled="true" class="output-text"></textarea>
+            <h6 class="copy-check animate__animated"><img src="./img/Check.svg">Copiado</h6>
             <p id="output-p">Ingresa el texto que desees encriptar o desencriptar.</p>
             <button class="copy button hidden" id="btn-copy">Copiar</button>
-
         </section>
 
         <section id="modal" class="modal">
 
             <div class="modal-container">
-                <a class="modal-close"href="#"><img src="./img/Modal-close.svg" alt="Cerrar modal"></a>
+                <a class="modal-close" href="#"><img src="./img/Modal-close.svg" alt="Cerrar modal"></a>
                 <img src="./img/Modal-warning.svg" alt="Alerta">
                 <h2 class="modal-title"></h2>
                 <p class="modal-paragraph"></p>
