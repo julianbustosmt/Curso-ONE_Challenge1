@@ -6,6 +6,8 @@ const infoSvgWarning = document.getElementById("info-svg-warning")
 const btnEncrypt = document.getElementById("btn-encrypt")
 const btnDecrypt = document.getElementById("btn-decrypt")
 
+const sectionOutput = document.querySelector(".output")
+const mainImage = document.getElementById("main-image")
 const outputText = document.getElementById("output-text")
 const outputP = document.getElementById("output-p")
 const btnCopy = document.getElementById("btn-copy")

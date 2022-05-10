@@ -2,6 +2,8 @@ function output(text) {
     outputText.value = text
     btnCopy.classList.remove("hidden")
     outputP.classList.add("hidden")
+    mainImage.classList.remove("image-block")
+    sectionOutput.classList.add("outputDesktop")
 }
 
 const copyClear = () =>{
@@ -14,6 +16,8 @@ const clear = () =>{
     outputText.value = ""
     outputP.classList.remove("hidden")
     btnCopy.classList.add("hidden")
+    mainImage.classList.add("image-block")
+    sectionOutput.classList.remove("outputDesktop")
 }
 
 const addWarnign = (element) => {
