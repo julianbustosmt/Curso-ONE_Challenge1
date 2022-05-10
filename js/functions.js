@@ -7,7 +7,7 @@ function output(text) {
 const copyClear = () =>{
     inputText.value = ""
     copyCheck.classList.remove("copy-check--show")
-    copyCheck.classList.remove("animate__tada")
+    copyCheck.classList.remove("animate__pulse")
 }
 
 const clear = () =>{

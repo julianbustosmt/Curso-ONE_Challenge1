@@ -16,6 +16,7 @@ btnEncrypt.addEventListener("click", () => {
     if (text.length > 0) {
         output(text)
         autoSize(outputText)
+        outputText.scrollIntoView()
     } else {
         const title = "Ningún mensaje fue encontrado"
         const paragraph = "Ingrese el texto que desea encriptar"
@@ -34,6 +35,7 @@ btnDecrypt.addEventListener("click", () => {
         try {
             output(decryptText(text))
             autoSize(outputText)
+            outputText.scrollIntoView()
         } catch (error) {
             const title = "Error"
             const paragraph = "Cadena inválida"
@@ -63,6 +65,7 @@ inputText.addEventListener("keydown", (event) => {
 
 inputText.addEventListener("input", ()=>{
     autoSize(inputText)
+    autoSize(outputText)
 })
 
 const copyCheck = document.querySelector(".copy-check")
@@ -70,9 +73,9 @@ btnCopy.addEventListener("click", () => {
     const textToCopy = outputText.value
     navigator.clipboard.writeText(textToCopy)
         .then(() => {
-            /**Agregar letreto de copiado */            copyCheck.classList.add("copy-check--show")
-            copyCheck.classList.add("animate__tada")
-            window.setTimeout(copyClear,3000) 
+            copyCheck.classList.add("copy-check--show")
+            copyCheck.classList.add("animate__pulse")
+            window.setTimeout(copyClear,2000) 
         })
         .catch(err => {
             console.log('Something went wrong', err);
