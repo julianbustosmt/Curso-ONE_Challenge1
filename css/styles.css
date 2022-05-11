@@ -303,6 +303,7 @@ footer{
     }
 
     .output{
+        min-width: 336px;
         width: 60%;
         justify-content: center;
         
@@ -315,8 +316,6 @@ footer{
     .outputDesktop{
         justify-content: space-between;
     }
-
-
 
 }
 
