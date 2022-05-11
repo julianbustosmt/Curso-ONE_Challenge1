@@ -14,9 +14,9 @@ const btnCopy = document.getElementById("btn-copy")
 
 
 btnEncrypt.addEventListener("click", () => {
-    const text = encryptText(inputText.value)
-    if (text.length > 0) {
-        output(text)
+    const text = inputText.value
+    if (text.trim().length > 0) {
+        output(encryptText(text))
         autoSize(outputText)
         outputText.scrollIntoView()
     } else {
@@ -29,11 +29,7 @@ btnEncrypt.addEventListener("click", () => {
 btnDecrypt.addEventListener("click", () => {
     const text = inputText.value
 
-    if (text.length === 0) {
-        const title = "Ningún mensaje fue encontrado"
-        const paragraph = "Ingrese el texto que desea desencriptar"
-        modalContent(title, paragraph)
-    } else {
+    if (text.trim().length > 0) {
         try {
             output(decryptText(text))
             autoSize(outputText)
@@ -43,6 +39,10 @@ btnDecrypt.addEventListener("click", () => {
             const paragraph = "Cadena inválida"
             modalContent(title, paragraph)
         }
+    } else {
+        const title = "Ningún mensaje fue encontrado"
+        const paragraph = "Ingrese el texto que desea desencriptar"
+        modalContent(title, paragraph)
     }
 })
 
