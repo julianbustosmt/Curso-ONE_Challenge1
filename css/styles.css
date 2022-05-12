@@ -14,10 +14,14 @@
 
 }
 /*********************Mobile***************************/
+
 body{
     font-family: 'Inter', sans-serif;
     background-color: var(--bg-primary);
-    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 main{
@@ -261,7 +265,15 @@ footer{
     display: flex;
     justify-content: center;
     gap: 1rem;
-    position: relative;
+}
+
+
+footer a{
+    transition: transform 0.5s;
+}
+
+footer a:hover{
+    transform: scale(1.1);
 }
 
 /*<-------------------------------------->*/
