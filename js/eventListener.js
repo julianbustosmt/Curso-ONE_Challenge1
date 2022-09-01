@@ -14,7 +14,7 @@ const btnCopy = document.getElementById("btn-copy")
 
 
 btnEncrypt.addEventListener("click", () => {
-    const text = inputText.value
+    const text = inputText.value.toLowerCase()
     if (text.trim().length > 0) {
         output(encryptText(text))
         autoSize(outputText)
@@ -27,7 +27,7 @@ btnEncrypt.addEventListener("click", () => {
 })
 
 btnDecrypt.addEventListener("click", () => {
-    const text = inputText.value
+    const text = inputText.value.toLowerCase()
 
     if (text.trim().length > 0) {
         try {
@@ -36,7 +36,7 @@ btnDecrypt.addEventListener("click", () => {
             outputText.scrollIntoView()
         } catch (error) {
             const title = "Error"
-            const paragraph = "Cadena inválida"
+            const paragraph = "El texto ingresado no está encriptado"
             modalContent(title, paragraph)
         }
     } else {
